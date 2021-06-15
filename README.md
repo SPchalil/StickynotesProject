@@ -1,1 +1,1 @@
-# StickynotesNew
+# StickynotesProject
