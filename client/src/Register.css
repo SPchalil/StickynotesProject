@@ -1,0 +1,242 @@
+.logIn-logo {
+    height: 15vmin;
+    pointer-events: none;
+    margin-top: 10px;
+    border-radius: 60px;
+  }
+
+  .formHeading{
+    color: #3d0808;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .formPage{
+    background-image : url(./boardImg.jpg);
+    background-position: center;
+    background-size: cover; 
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+  }
+
+  .formStyle{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 400px;
+  }
+
+  .inputEmail{
+    width: 450px;
+    height: 50px;
+    border-radius: 8px;
+    border:none;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.986);
+    transition: 0.3s all;
+    font-size: 1.0em;
+    padding: 10px;
+
+  }
+  .inputEmail:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .inputName{
+    width: 450px;
+    height: 50px;
+    border-radius: 8px;
+    border:none;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.986);
+    transition: 0.3s all;
+    font-size: 1.0em;
+    padding: 10px;
+  }
+
+  .inputName:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .inputPassword{
+    width: 450px;
+    height: 50px;
+    border-radius: 8px;
+    border:none;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.986);
+    transition: 0.3s all;
+    font-size: 1.0em;
+    padding: 10px;
+  }
+
+  .inputPassword:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .confirmPassword{
+    width: 450px;
+    height: 50px;
+    border-radius: 8px;
+    border:none;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.986);
+    transition: 0.3s all;
+    font-size: 1.0em;
+    padding: 10px;
+  }
+
+  .confirmPassword:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+/*---------------------------------------------------*/
+  .formButtons{
+
+    height: 200px;
+  }
+   
+ 
+/*----------------------Home Page-----------------------------*/
+  .logInButton{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    background-color: rgba(23, 165, 248, 0.986);
+    transition: 0.3s all;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+    color: aliceblue;
+  }
+  .logInButton:hover {
+    background-color: rgba(78, 74, 74, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .createNewButton{
+    height: 55px;
+    width: 200px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    background-color: rgba(23, 248, 117, 0.986);
+    transition: 0.3s all;
+    font-size: 0.7em;
+    cursor: pointer;
+    padding: 10px;
+    color: aliceblue;
+  }
+
+  .createNewButton:hover {
+    background-color: rgba(78, 74, 74, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+/*----------------------LogIn Page-----------------------------*/
+  .logInEnterButton{
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    margin:20px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    background-color: rgba(23, 165, 248, 0.986);
+    transition: 0.3s all;
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 10px;
+    color: aliceblue;
+  }
+  .logInEnterButton:hover {
+    background-color: rgba(78, 74, 74, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .logInCancelButton{
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    margin:20px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    background-color: rgba(245, 233, 72, 0.986);
+    transition: 0.3s all;
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    color: aliceblue;
+  }
+  .logInCancelButton:hover {
+    background-color: rgba(78, 74, 74, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+/*--------------------Register Page-------------------------------*/
+.info{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight:bold;
+    color:white;
+}
+  .signUpButton{
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    margin:20px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    background-color: rgba(23, 165, 248, 0.986);
+    transition: 0.3s all;
+    font-size: 0.8em;
+    cursor: pointer;
+    color: aliceblue;
+  }
+
+  .signUpButton:hover {
+    background-color: rgba(78, 74, 74, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .cancelButton{
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    margin:20px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    background-color: rgba(245, 233, 72, 0.986);
+    transition: 0.3s all;
+    font-size: 0.8em;
+    cursor: pointer;
+    color: aliceblue;
+  }
+
+  .cancelButton:hover {
+    background-color: rgba(78, 74, 74, 0.45);
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+.error{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight:bold;
+    color:rgb(51, 34, 3);
+}
