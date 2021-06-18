@@ -1,5 +1,5 @@
 // MySQL Configs
-const {MYSQL_CONFIGS, port} = require('./config');
+const {MySQL_Configs, port} = require('./config');
 
 /*-----------Building a REST API using Node.js/ Express / MySql----------------*/
 
