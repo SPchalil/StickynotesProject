@@ -1,6 +1,5 @@
 // MySQL Configs
 const {MYSQL_CONFIGS, port} = require('./config');
-console.log(MYSQL_CONFIGS, port);
 
 /*-----------Building a REST API using Node.js/ Express / MySql----------------*/
 
@@ -220,8 +219,7 @@ app.post('/stickynotes', (req, res)=>{
 /*-----------Listening to PORT----------------*/
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`)
-  console.log(`MySQL ${MYSQL_CONFIGS.user}`)
+  console.log(`Listening on port ${port}`);
 });
 
 
