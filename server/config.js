@@ -4,7 +4,7 @@ dotenv.config();
 const port = process.env.PORT;
 const MySQL_Configs = {
     host: process.env.HOST,
-    user: "react-stickynotes-user", //change this accordingly
+    user: process.env.MYSQL_USER, //change this accordingly
     password: process.env.PASSWORD,
     database: process.env.DATABASE
 }
