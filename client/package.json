@@ -1,7 +1,8 @@
 {
-  "name": "sticky-notes",
+  "name": "sticky-notes-client-react",
   "version": "0.1.0",
   "private": true,
+  "author": "Swapna",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
