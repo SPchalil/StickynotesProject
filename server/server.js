@@ -81,12 +81,7 @@ app.patch('/stickynotes/:stickynoteid', (req, res)=>{
 /*-----------POST - Checking (Register)----------------*/
 app.post('/check', (req, res)=>{
    let mysql      = require('mysql2');
-   let connection = mysql.createConnection({
-     host     : 'localhost',
-     user     : 'react-stickynotes-user',
-     password : 'password123',
-     database : 'stickynotesapp'
-   });
+   let connection = mysql.createConnection(MySQL_Configs);
    connection.connect();
      const email= req.body.email;
      const username= req.body.username;
@@ -213,9 +208,8 @@ app.post('/stickynotes', (req, res)=>{
       // res.send('Stickynote Saved succesfully');
       res.sendStatus(200);
     });
-  }
   connection.end();
-});
+  });
 
 
 /*-----------POST - Stickynotes----------------*/
@@ -223,12 +217,7 @@ app.post('/stickynotes', (req, res)=>{
 app.post('/stickynotes', (req, res) => {
 
   var mysql = require('mysql2');
-  var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123456',
-    database: 'stickynotesapp'
-  });
+  var connection = mysql.createConnection(MySQL_Configs);
 
   connection.connect();
 
