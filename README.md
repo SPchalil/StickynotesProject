@@ -11,6 +11,12 @@ This app requires Node Package Manager (npm) to run. You can clone the repo and 
 
 ## Getting Started
 **Rewrite this part**
+- npm install in both /client and /server
+- set .env variables
+- install mysql for appropriate OS
+- create mysql account and give it appropriate rights
+- setup .env and config.js files
+- run database dump for mysql
 
 
 Runs the app in the development mode.\
