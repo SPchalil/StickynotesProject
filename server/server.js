@@ -1,12 +1,11 @@
 // MySQL Configs
-const MySQL_Configs = require('./config');
+const {MYSQL_CONFIGS, port} = require('./config');
+console.log(MYSQL_CONFIGS, port);
 
 /*-----------Building a REST API using Node.js/ Express / MySql----------------*/
 
 const express = require('express');
 const app = express();
-const port = 3001;
-//const port=process.env.PORT||3001; 
 const cors = require('cors');
 app.use(cors());
 
@@ -23,16 +22,10 @@ app.get('/', (req, res) => {
 
 app.get('/users', (req, res) => {
 let mysql      = require('mysql2');
-let connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'react-stickynotes-user',
-  password : 'password123',
-  database : 'stickynotesapp'
-});
- 
+let connection = mysql.createConnection(MySQL_Configs);
 connection.connect();
 
-connection.query('SELECT * from users', function (error, results, fields) { 
+connection.query('SELECT * from users', function (error, results, fields) {
    if (error) throw error;
    res.send(results);
  });
@@ -43,15 +36,8 @@ connection.end();
 
 app.get('/stickynotes', (req, res) => {
    let mysql      = require('mysql2');
-   let connection = mysql.createConnection({
-     host     : 'localhost',
-     user     : 'react-stickynotes-user',
-     password : 'password123',
-     database : 'stickynotesapp'
-   });
-    
+   let connection = mysql.createConnection(MySQL_Configs);
    connection.connect();
-   
    connection.query('SELECT * from stickynotes', function (error, results, fields) { //ORM
       if (error) throw error;
       res.send(results);
@@ -63,13 +49,8 @@ app.get('/stickynotes', (req, res) => {
 
 app.delete('/stickynotes/:stickynoteid', (req, res)=>{
       let mysql      = require('mysql2');
-      let connection = mysql.createConnection({
-        host     : 'localhost',
-        user     : 'react-stickynotes-user',
-        password : 'password123',
-        database : 'stickynotesapp'
-      });
-       
+      let connection = mysql.createConnection(MySQL_Configs);
+
       connection.connect();
       let { stickynoteid } = req.params.stickynoteid;
       let sql = `DELETE FROM stickynotes WHERE stickynoteid = ${req.params.stickynoteid}`; 
@@ -81,33 +62,25 @@ app.delete('/stickynotes/:stickynoteid', (req, res)=>{
     });
       connection.end();
       })
-   
+
 /*-----------PATCH - Stickynotes----------------*/
 app.patch('/stickynotes/:stickynoteid', (req, res)=>{
-   
       let mysql      = require('mysql2');
-      let connection = mysql.createConnection({
-        host     : 'localhost',
-        user     : 'react-stickynotes-user',
-        password : 'password123',
-        database : 'stickynotesapp'
-      });
-       
+      let connection = mysql.createConnection(MySQL_Configs);
       connection.connect();
       let { stickynoteid } = req.params.stickynoteid;
       console.log("Body: ", req.body);
       let sql = `UPDATE stickynotes SET text =  '${req.body.text}' WHERE stickynoteid = '${req.params.stickynoteid}'`;
       console.log("id: ", req.params.stickynoteid);
-      connection.query(sql, (error, results, fields)=> { 
-      if (error) return console.error(error.message);
-      res.status(200).send(results);
-    });
+      connection.query(sql, (error, results, fields)=> {
+        if (error) return console.error(error.message);
+        res.status(200).send(results);
+      });
       connection.end();
       })
 
 /*-----------POST - Checking (Register)----------------*/
 app.post('/check', (req, res)=>{
-   
    let mysql      = require('mysql2');
    let connection = mysql.createConnection({
      host     : 'localhost',
@@ -119,30 +92,20 @@ app.post('/check', (req, res)=>{
      const email= req.body.email;
      const username= req.body.username;
      const password= req.body.password;
-     
      if (email && username && password){
       connection.query('SELECT * FROM users WHERE email = ? OR username =  ? AND password = ?', [email, username, password], function (err, results) {
       if (err) return console.error(err.message);
       res.status(200).send(results);
       });
      }
-    
    connection.end();
    });
- 
+
  /*-----------POST - Users (Registration)----------------*/
  app.post('/registration', (req, res)=>{
-   
    let mysql      = require('mysql2');
-   let connection = mysql.createConnection({
-     host     : 'localhost',
-     user     : 'react-stickynotes-user',
-     password : 'password123',
-     database : 'stickynotesapp'
-   });
-    
+   let connection = mysql.createConnection(MySQL_Configs);
    connection.connect();
-   
    const username=req.body.username;
    const email = req.body.email;
 	const password = req.body.password;
@@ -161,33 +124,22 @@ app.post('/check', (req, res)=>{
                //res.status(200).send(results);
               res.status(200).send("user registered"); //Response status code 200 means correct. 500 means incorrect.
              });
-            
-            
 			} else {
 				//response.send('Incorrect Username and/or Password!');
             //res.send("user exists");
             res.status(500).send("user exists");
-			}			
+			}
 			//res.end();*/
 		});
-	} 
+	}
    connection.end();
 });
 
-    
 /*-----------POST - Users (Register)----------------*/
       app.post('/register', (req, res)=>{
-   
          let mysql      = require('mysql2');
-         let connection = mysql.createConnection({
-           host     : 'localhost',
-           user     : 'react-stickynotes-user',
-           password : 'password123',
-           database : 'stickynotesapp'
-         });
-          
+         let connection = mysql.createConnection(MySQL_Configs);
          connection.connect();
-      
          const user = {
            username: req.body.username,
            email: req.body.email,
@@ -203,27 +155,17 @@ app.post('/check', (req, res)=>{
           });
          connection.end();
          });
-          
- 
+
  /*-----------POST - Users (Login)----------------*/
- 
 app.post('/login', function(req, res) {
 
    // console.log('1')
    // const paypalResult = await axios.post('https://api.paypal.com', {});
    // if(paypalResult.paid === true) {
-      
    // } else {
-
    // }
    let mysql      = require('mysql2');
-   let connection = mysql.createConnection({
-     host     : 'localhost',
-     user     : 'react-stickynotes-user',
-     password : 'password123',
-     database : 'stickynotesapp'
-   });
-    
+   let connection = mysql.createConnection(MySQL_Configs);
    connection.connect();
 
 	const email = req.body.email;
@@ -241,31 +183,23 @@ app.post('/login', function(req, res) {
 				//response.send('Incorrect Username and/or Password!');
             res.send("Login unsuccessful");
             res.status(500).send("Login unsuccessful");
-			}			
+			}
 			//res.end();*/
 		});
-	} 
+	}
    connection.end();
 });
-
 
 /*-----------POST - Stickynotes----------------*/
 
 app.post('/stickynotes', (req, res)=>{
-   
    let mysql      = require('mysql2');
-   let connection = mysql.createConnection({
-     host     : 'localhost',
-     user     : 'react-stickynotes-user',
-     password : 'password123',
-     database : 'stickynotesapp'
-   });
-    
+   let connection = mysql.createConnection(MySQL_Configs);
    connection.connect();
 
    // handle the POST request.
    let stickynote = {
-     userid: req.body.userid, 
+     userid: req.body.userid,
      stickynoteid: req.body.stickynoteid,
      title: req.body.title,
      posx: req.body.posx,
@@ -274,7 +208,6 @@ app.post('/stickynotes', (req, res)=>{
      color:req.body.color,
      text:req.body.text
     }
-    
     connection.query('INSERT INTO stickynotes SET ?', stickynote, function (err, results) {
       if (err) throw err;
       // if there are no errors send an OK message.
@@ -287,7 +220,8 @@ app.post('/stickynotes', (req, res)=>{
 /*-----------Listening to PORT----------------*/
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`)
+  console.log(`Listening on port ${port}`)
+  console.log(`MySQL ${MYSQL_CONFIGS.user}`)
 });
 
 
@@ -307,7 +241,7 @@ app.get('/stickynotes', (req, res) => {
      password : 'password123',
      database : 'stickynotesapp'
    });
-    
+
    connection.connect();
 
    let sql = `DELETE FROM stickynotes WHERE stickynotekey = ?`;
@@ -317,8 +251,7 @@ app.get('/stickynotes', (req, res) => {
       res.send(results);
       console.log('Deleted Row(s):', results.affectedRows);
     });
-   
-   
+
    connection.end();
    })
 */
@@ -356,7 +289,7 @@ app.get('/notes', (req, res) => {
          text: "test"
       },
    ]
-    
+
    //console.log(notes[0].positionX)
    res.send(notes)
  });
