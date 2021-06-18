@@ -9,7 +9,7 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
 /*-----------MySql - GET react-stickynotes-user----------------*/
 
@@ -213,8 +213,45 @@ app.post('/stickynotes', (req, res)=>{
       // res.send('Stickynote Saved succesfully');
       res.sendStatus(200);
     });
-   connection.end();
-   });
+  }
+  connection.end();
+});
+
+
+/*-----------POST - Stickynotes----------------*/
+
+app.post('/stickynotes', (req, res) => {
+
+  var mysql = require('mysql2');
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    database: 'stickynotesapp'
+  });
+
+  connection.connect();
+
+  // handle the POST request.
+  var stickynote = {
+    userid: req.body.userid,
+    stickynoteid: req.body.stickynoteid,
+    title: req.body.title,
+    posx: req.body.posx,
+    posy: req.body.posy,
+    bgcolor: req.body.bgcolor,
+    color: req.body.color,
+    text: req.body.text
+  }
+
+  connection.query('INSERT INTO stickynotes SET ?', stickynote, function (err, results) {
+    if (err) throw err;
+    // if there are no errors send an OK message.
+    // res.send('Stickynote Saved succesfully');
+    res.sendStatus(200);
+  });
+  connection.end();
+});
 
 /*-----------Listening to PORT----------------*/
 
@@ -243,8 +280,8 @@ app.get('/stickynotes', (req, res) => {
    connection.connect();
 
    let sql = `DELETE FROM stickynotes WHERE stickynotekey = ?`;
-   connection.query(sql, 1, (error, results, fields)=> { 
-      if (error) 
+   connection.query(sql, 1, (error, results, fields)=> {
+      if (error)
       return console.error(error.message);
       res.send(results);
       console.log('Deleted Row(s):', results.affectedRows);

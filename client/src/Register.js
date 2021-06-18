@@ -78,7 +78,6 @@ class Register extends React.Component {
         let email = this.state.email;
         let password = this.state.password;
         if (!errors) {
-
            /* api.post(`/registration`,
                     {username:`${username}`,
                     email:`${email}`, 
