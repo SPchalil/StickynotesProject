@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-/*-----------MySql - GET root----------------*/
+/*-----------MySql - GET react-stickynotes-user----------------*/
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -19,11 +19,11 @@ app.get('/', (req, res) => {
 /*-----------MySql - GET Users----------------*/
 
 app.get('/users', (req, res) => {
-var mysql      = require('mysql2');
-var connection = mysql.createConnection({
+let mysql      = require('mysql2');
+let connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root',
-  password : '123456',
+  user     : 'react-stickynotes-user',
+  password : 'password123',
   database : 'stickynotesapp'
 });
  
@@ -39,11 +39,11 @@ connection.end();
 /*-----------MySql - GET Stickynotes----------------*/
 
 app.get('/stickynotes', (req, res) => {
-   var mysql      = require('mysql2');
-   var connection = mysql.createConnection({
+   let mysql      = require('mysql2');
+   let connection = mysql.createConnection({
      host     : 'localhost',
-     user     : 'root',
-     password : '123456',
+     user     : 'react-stickynotes-user',
+     password : 'password123',
      database : 'stickynotesapp'
    });
     
@@ -59,11 +59,11 @@ app.get('/stickynotes', (req, res) => {
 /*-----------DELETE - Stickynotes----------------*/
 
 app.delete('/stickynotes/:stickynoteid', (req, res)=>{
-      var mysql      = require('mysql2');
-      var connection = mysql.createConnection({
+      let mysql      = require('mysql2');
+      let connection = mysql.createConnection({
         host     : 'localhost',
-        user     : 'root',
-        password : '123456',
+        user     : 'react-stickynotes-user',
+        password : 'password123',
         database : 'stickynotesapp'
       });
        
@@ -82,11 +82,11 @@ app.delete('/stickynotes/:stickynoteid', (req, res)=>{
 /*-----------PATCH - Stickynotes----------------*/
 app.patch('/stickynotes/:stickynoteid', (req, res)=>{
    
-      var mysql      = require('mysql2');
-      var connection = mysql.createConnection({
+      let mysql      = require('mysql2');
+      let connection = mysql.createConnection({
         host     : 'localhost',
-        user     : 'root',
-        password : '123456',
+        user     : 'react-stickynotes-user',
+        password : 'password123',
         database : 'stickynotesapp'
       });
        
@@ -105,11 +105,11 @@ app.patch('/stickynotes/:stickynoteid', (req, res)=>{
 /*-----------POST - Checking (Register)----------------*/
 app.post('/check', (req, res)=>{
    
-   var mysql      = require('mysql2');
-   var connection = mysql.createConnection({
+   let mysql      = require('mysql2');
+   let connection = mysql.createConnection({
      host     : 'localhost',
-     user     : 'root',
-     password : '123456',
+     user     : 'react-stickynotes-user',
+     password : 'password123',
      database : 'stickynotesapp'
    });
    connection.connect();
@@ -130,11 +130,11 @@ app.post('/check', (req, res)=>{
  /*-----------POST - Users (Registration)----------------*/
  app.post('/registration', (req, res)=>{
    
-   var mysql      = require('mysql2');
-   var connection = mysql.createConnection({
+   let mysql      = require('mysql2');
+   let connection = mysql.createConnection({
      host     : 'localhost',
-     user     : 'root',
-     password : '123456',
+     user     : 'react-stickynotes-user',
+     password : 'password123',
      database : 'stickynotesapp'
    });
     
@@ -175,11 +175,11 @@ app.post('/check', (req, res)=>{
 /*-----------POST - Users (Register)----------------*/
       app.post('/register', (req, res)=>{
    
-         var mysql      = require('mysql2');
-         var connection = mysql.createConnection({
+         let mysql      = require('mysql2');
+         let connection = mysql.createConnection({
            host     : 'localhost',
-           user     : 'root',
-           password : '123456',
+           user     : 'react-stickynotes-user',
+           password : 'password123',
            database : 'stickynotesapp'
          });
           
@@ -213,11 +213,11 @@ app.post('/login', function(req, res) {
    // } else {
 
    // }
-   var mysql      = require('mysql2');
-   var connection = mysql.createConnection({
+   let mysql      = require('mysql2');
+   let connection = mysql.createConnection({
      host     : 'localhost',
-     user     : 'root',
-     password : '123456',
+     user     : 'react-stickynotes-user',
+     password : 'password123',
      database : 'stickynotesapp'
    });
     
@@ -250,18 +250,18 @@ app.post('/login', function(req, res) {
 
 app.post('/stickynotes', (req, res)=>{
    
-   var mysql      = require('mysql2');
-   var connection = mysql.createConnection({
+   let mysql      = require('mysql2');
+   let connection = mysql.createConnection({
      host     : 'localhost',
-     user     : 'root',
-     password : '123456',
+     user     : 'react-stickynotes-user',
+     password : 'password123',
      database : 'stickynotesapp'
    });
     
    connection.connect();
 
    // handle the POST request.
-   var stickynote = {
+   let stickynote = {
      userid: req.body.userid, 
      stickynoteid: req.body.stickynoteid,
      title: req.body.title,
@@ -297,11 +297,11 @@ To delete data in MySQL database from a node.js application, you follow these st
 --Disconnect from the MySQL database server.
 
 app.get('/stickynotes', (req, res) => {
-   var mysql      = require('mysql2');
-   var connection = mysql.createConnection({
+   let mysql      = require('mysql2');
+   let connection = mysql.createConnection({
      host     : 'localhost',
-     user     : 'root',
-     password : '123456',
+     user     : 'react-stickynotes-user',
+     password : 'password123',
      database : 'stickynotesapp'
    });
     
