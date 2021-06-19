@@ -4,7 +4,6 @@ import StickyNote from "./StickyNote.jsx";
 import './StickyNotesApp.css';
 
 import axios from 'axios';
-
 //Backend
 const api = axios.create({
     baseURL: 'http://localhost:3001'
@@ -34,38 +33,10 @@ class Board extends React.Component {
         api.get('/stickynotes').then(res => {
             console.log(res.data)
             const apiStickyNotes = res.data;
-            console.log(apiStickyNotes)
-            //const currentStickyNotes = [];
-            //const fakeStickyNotes =[];
-            
-            /*
-            apiStickyNotes.forEach(myFunction);   ///arrow function
-            function myFunction(key){
-                const fakeStickyNote =
-                <StickyNote
-                        key={apiStickyNotes[key].stickynotekey}
-                        title={apiStickyNotes[key].title}
-                        positionX={apiStickyNotes[key].posx}
-                        positionY={apiStickyNotes[key].posy}
-                        color={apiStickyNotes[key].color}
-                        bgColor={apiStickyNotes[key].bgcolor}
-                        index={index}
-                        text={apiStickyNotes[key].text} 
-                        //hideAction={this.hideStickyNoteHandler} 
-                    /> 
-                currentStickyNotes.push(fakeStickyNote);
-             };
-
-             this.setState({
-                        currentStickyNotes: currentStickyNotes
-                    });
-            */
-           
+            console.log(apiStickyNotes);
             let items = apiStickyNotes.length;
             for (let i=0; i<items; i++){
-             
                 const fakeStickyNote =
-                
                     <StickyNote
                         key={apiStickyNotes[i].stickynoteid}
                         title={apiStickyNotes[i].title}
@@ -79,63 +50,16 @@ class Board extends React.Component {
                         hideAction={this.hideStickyNoteHandler}
                         dragAction={this.whenStickyNoteDragged}
                         onChangeAction={this.onChangeStickyNote}
-                    /> 
-                    
+                    />  
                     currentStickyNotes.push(fakeStickyNote);
                     }
                          
                     this.setState({
                         currentStickyNotes: currentStickyNotes
                     });
-
-                    
-              
         })
-
-        
-        
+   
     }
-/*
-    hideStickyNoteHandler(index) {
-        const apiNewStickyNotes = [...this.state.currentStickyNotes];
-        apiNewStickyNotes.splice(index, 1, null);
-        this.setState({
-            currentStickyNotes: apiNewStickyNotes
-        });
-    }        
-*/
-    /*
-    apiStickyNotes.forEach((stickyNote) => {
-   // Do something similar to what you are doing in your for loop
-});
-    function addFunction(index) { 
-    title={apiStickyNotes[index].title}    
-    const fakeStickyNote =
-                    <StickyNote
-                        key={apiStickyNote[0].key}
-                        title={apiStickyNote[0].title}
-                        positionX={apiStickyNote[0].positionX}
-                        positionY={apiStickyNote[0].positionY}
-                        color={apiStickyNote[0].color}
-                        bgColor={apiStickyNote[0].bgColor}
-                        index="0"
-                        text={apiStickyNote[0].text}  
-                    />
-                
-                    currentStickyNotes.push(fakeStickyNote);
-                    this.setState({
-                        currentStickyNotes: currentStickyNotes
-                    });
-    
-    
-    
-    
-    */
-    
-    
-    //fakeStickyNotes:[],
-    //this.setState({ fakeStickyNotes: res.data })
-    
     /*------------------------------------------------------------------*/
     //Get the Height, Width of the element after React renders that element/window resize event
     
@@ -181,7 +105,6 @@ class Board extends React.Component {
                 [
                     <StickyNote                //calling the StickyNote component passing the properties
                         key={`StickyNote_${index}`}
-                        //key={index}
                         title="Work"
                         positionX={posX}
                         positionY={posY}
@@ -195,10 +118,7 @@ class Board extends React.Component {
                         onChangeAction={this.onChangeStickyNote}
                     />
                 ]
-                
-                
                 )
-
         });
 
         /*-----------------Backend - Post-creating Sticky Notes in the database--------------------*/
@@ -229,28 +149,6 @@ class Board extends React.Component {
             this.state.currentStickyNotes   //current stickynote along with the previous ones
         );
     }
-    /*-----------------Hide Sticky Notes(using index) --------------------*/
-    /*
-    hideStickyNoteHandler(index) {
-        const newStickyNotes = [...this.state.currentStickyNotes];
-        newStickyNotes.splice(index, 1, null);
-        // TODO: the above line does not work. why? because we cannot use id as array index for splice function. solution: use array filter() to remove the sticky note with this id
-
-       // newStickyNotes.filter(StickyNote=> StickyNote.id != id);
-        this.setState({
-            currentStickyNotes: newStickyNotes
-        });
-
-      let stickynoteid = index;
-        api.delete(`/stickynotes/${stickynoteid}`)  
-        .then(res => {  
-        console.log(res);  
-        console.log(res.data); 
-        
-    })  
-        
-    }
-    */
    /*-----------------Delete Sticky Notes (using id)--------------*/
 
     hideStickyNoteHandler(id) {
@@ -262,14 +160,14 @@ class Board extends React.Component {
         });
 
       /*-----------------Backend -delete Sticky Note from the database--------------*/
+
         let stickynoteid = id;
         api.delete(`/stickynotes/${stickynoteid}`)  
         .then(res => {  
         console.log(res);  
         console.log(res.data); 
         
-    })  
-        
+    })     
     }
     
     /*-----------------Drag & Drop Sticky Notes --------------*/
@@ -302,10 +200,6 @@ class Board extends React.Component {
                 const oldStickyNote = this.state.currentStickyNotes[index];
                 const newStickyNote =
                     <StickyNote
-                        //key={`${oldStickyNote.key}_1`}
-                        //key = {oldStickyNote.props.key}
-                        //key={`${oldStickyNote.props.key}_1`}
-                        //key = {`${oldStickyNote.index}_1`}
                         key = {`StickyNote_Dragdropped_${oldStickyNote.props.index}`}
                         id = {oldStickyNote.props.id}
                         title={oldStickyNote.props.title}
@@ -333,8 +227,6 @@ class Board extends React.Component {
         onChangeStickyNote(newProps) {
         const newStickyNote =
             <StickyNote
-                //key={`${newProps.key}_1`}
-                //key = {newProps.index}
                 key = {`StickyNote_colorOrtextChanged_${newProps.index}`}
                 id = {newProps.id}
                 title={newProps.title}
@@ -368,7 +260,6 @@ class Board extends React.Component {
 
         /* //api.patch-update color
 
-         
          let hexbgcolor=newProps.bgColor;
          let bgcolor = hexbgcolor.substr(1,6);
          api.patch(`/stickynotes/${stickynoteid}`, {bgcolor:`${bgcolor}`})  
@@ -376,11 +267,9 @@ class Board extends React.Component {
          console.log(res);  
          console.log(res.data); 
         });*/
-        
-        
+         
     }
 
-    
     /*-----------------Render Board- with StickyNotes along with Headings --------------------*/
     //{this.state.fakeStickyNotes.map(fakeStickyNote => <h2 key={fakeStickyNote.id}>{fakeStickyNote.title}</h2>)}
     render() {
