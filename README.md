@@ -23,20 +23,22 @@ cd into client/ and run the command 'npm install'
 To install all dependencies, change the directory to server 
 cd into server/ and run the command 'npm install'
 
-## Set .env variables
+### Install MySQL
+   - Install MySQL for appropriate OS
+   - Create MySQL account and give it appropriate rights
+   - Run database dump for MySQL
 
-## Install MySql for appropriate OS
+### Setup .env and config.js files
+To change the configurations to suit your MySQL settings:
+in server/, create an .env file. put configurations in as you see fitting your local mysql server 
+   - Set .env variables
+   - Setup .env and config.js files
 
-### Create MySql account and give it appropriate rights
-
-## Setup .env and config.js files
-
-## run database dump for mysql
-
-Runs the server by typing node server.js in the terminal.
+## To Run
+To start the development server for nodejs, cd into server/ and npm start
 Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
-Runs the app in the development mode.\
+To start the development server for react, cd into client/ and npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
