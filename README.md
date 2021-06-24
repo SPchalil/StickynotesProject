@@ -17,7 +17,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the terminal, use the command 'git clone' to get a copy of an existing Git repository :
 
 ### Clone the repo
+![gitclone](https://user-images.githubusercontent.com/74065235/123194744-91633600-d481-11eb-8ad7-5e59f0dd8b0c.png)
 
+To install the client and the Server,
 In the project directory, run the command:
 
 ### Install the React app - Client
