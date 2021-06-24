@@ -20,6 +20,7 @@ In the terminal, use the command 'git clone' to get a copy of an existing Git re
 ![gitclone](https://user-images.githubusercontent.com/74065235/123194744-91633600-d481-11eb-8ad7-5e59f0dd8b0c.png)
 
 To install the npm packages for the client and the Server,
+![gitclone2](https://user-images.githubusercontent.com/74065235/123196106-e607b080-d483-11eb-81c4-d5defb81f581.png)
 
 In the project directory, run the command:
 
