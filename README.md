@@ -19,14 +19,15 @@ In the terminal, use the command 'git clone' to get a copy of an existing Git re
 ### Clone the repo
 ![gitclone](https://user-images.githubusercontent.com/74065235/123194744-91633600-d481-11eb-8ad7-5e59f0dd8b0c.png)
 
-To install the client and the Server,
+To install the npm packages for the client and the Server,
+
 In the project directory, run the command:
 
-### Install the React app - Client
+### Install (React app - Client)
 To install all dependencies, change the directory to client 
 cd into client/ and run the command 'npm install'
 
-### Install the Server
+### Install (Server)
 To install all dependencies, change the directory to server 
 cd into server/ and run the command 'npm install'
 
