@@ -18,6 +18,8 @@ In the project directory, run the command:
 ### Install the React app - Client
 To install all dependencies, change the directory to client 
 cd into client/ and run the command 'npm install'
+npm install 
+
 
 ### Install the Server
 To install all dependencies, change the directory to server 
