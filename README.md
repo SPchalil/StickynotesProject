@@ -36,6 +36,7 @@ cd into server/ and run the command 'npm install'
      You can download the MySQL Workbench from here:- https://www.mysql.com/products/workbench/
    - Create MySQL account and give it appropriate rights
    - Run database dump for MySQL
+     For new users to setup, they can import the data from the DataDump file
 
 ### Setup .env and config.js files
 To change the configurations to suit your MySQL settings:
