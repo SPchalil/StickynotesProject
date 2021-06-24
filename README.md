@@ -13,6 +13,9 @@ This app requires Node Package Manager (npm) to run. You can clone the repo and 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Installation
+
+### Clone the repo
+
 In the project directory, run the command:
 
 ### Install the React app - Client
