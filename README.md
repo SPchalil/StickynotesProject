@@ -31,8 +31,9 @@ cd into client/ and run the command 'npm install'
 To install all dependencies, change the directory to server 
 cd into server/ and run the command 'npm install'
 
-### Install MySQL
+### Install MySQL database
    - Install MySQL for appropriate OS
+     You can download the MySQL Workbench from here:- https://www.mysql.com/products/workbench/
    - Create MySQL account and give it appropriate rights
    - Run database dump for MySQL
 
