@@ -25,11 +25,11 @@ To install the npm packages for the Client and the Server, run the command seper
 
 #### Install (React app - Client)
 To install all dependencies, change the directory to client 
-cd into client/ and run the command 'npm install'
+cd into client/ and run the command 'npm install', `../client/npm install`
 
 #### Install (Server)
 To install all dependencies, change the directory to server 
-cd into server/ and run the command 'npm install'
+cd into server/ and run the command 'npm install', `../server/npm install`
 
 ### Install MySQL database
    - Install MySQL for appropriate OS-
