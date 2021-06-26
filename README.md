@@ -73,10 +73,10 @@ module.exports = {MySQL_Configs, port};
 
 
 ## To Run
-To start the development server for nodejs, cd into server/ and npm start
+To start the development server for nodejs, cd into server/ and run the command 'npm start', `../server/npm start`
 Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
-To start the development server for react, cd into client/ and npm start
+To start the development server for react, cd into client/ and run the command 'npm start', `../client/npm start`
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
