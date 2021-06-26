@@ -48,7 +48,7 @@ in server/, create an .env file. put configurations in as you see fitting your l
 NODE_ENV = development
 PORT = 3001
 
-# MySQL connection info, change according to your local configurations
+# MySQL connection info, fill according to your local configurations
 
 HOST =  ...
 MYSQL_USER =  ...
