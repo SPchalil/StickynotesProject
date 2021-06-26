@@ -42,7 +42,7 @@ cd into server/ and run the command 'npm install', `../server/npm install`
 To change the configurations to suit your MySQL settings:
 in server/, create an .env file. put configurations in as you see fitting your local mysql server 
    - Set .env variables
-   - Setup .env and config.js files
+   - Setup .env file
    
 ```javascript
 NODE_ENV = development
@@ -55,6 +55,22 @@ MYSQL_USER =  ...
 PASSWORD = ...
 DATABASE = ...
 ```
+  - Setup config.js file
+
+```javascript
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.PORT;
+const MySQL_Configs = {
+    host: process.env.HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
+}
+console.log(port, MySQL_Configs);
+module.exports = {MySQL_Configs, port};
+```
+
 
 ## To Run
 To start the development server for nodejs, cd into server/ and npm start
