@@ -40,7 +40,7 @@ cd into server/ and run the command 'npm install', `../server/npm install`
 
 ### Setup .env and config.js files
 To change the configurations to suit your MySQL settings:
-in server/, create an .env file. put configurations in as you see fitting your local mysql server 
+in server/, create an .env file, put configurations in as you see fitting your local mysql server 
    - Set .env variables
    - Setup .env file
    
