@@ -43,6 +43,18 @@ To change the configurations to suit your MySQL settings:
 in server/, create an .env file. put configurations in as you see fitting your local mysql server 
    - Set .env variables
    - Setup .env and config.js files
+   
+```javascript
+NODE_ENV = development
+PORT = 3001
+
+# MySQL connection info, change according to your local configurations
+
+HOST =  ...
+MYSQL_USER =  ...
+PASSWORD = ...
+DATABASE = ...
+```
 
 ## To Run
 To start the development server for nodejs, cd into server/ and npm start
