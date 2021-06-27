@@ -17,38 +17,68 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the terminal, use the command 'git clone' to get a copy of an existing Git repository :
 
 ### Clone the repo
-![gitclone](https://user-images.githubusercontent.com/74065235/123194744-91633600-d481-11eb-8ad7-5e59f0dd8b0c.png)
+`git clone https://github.com/your_username_/Project-Name.git`
 
 ### Install NPM packages
 To install the npm packages for the Client and the Server, run the command seperately by changing the directory,
-![gitclone2](https://user-images.githubusercontent.com/74065235/123196668-e6547b80-d484-11eb-931f-a3726f1b2a5b.png)
+`npm install`
 
 #### Install (React app - Client)
 To install all dependencies, change the directory to client 
-cd into client/ and run the command 'npm install'
+cd into client/ and run the command 'npm install', `../client/npm install`
 
 #### Install (Server)
 To install all dependencies, change the directory to server 
-cd into server/ and run the command 'npm install'
+cd into server/ and run the command 'npm install', `../server/npm install`
 
 ### Install MySQL database
-   - Install MySQL for appropriate OS
-     You can download the MySQL Workbench from here:- https://www.mysql.com/products/workbench/
+   - Install MySQL for appropriate OS-
+     [You can download the MySQL Workbench from here](https://www.mysql.com/products/workbench/)
    - Create MySQL account and give it appropriate rights
-   - Run database dump for MySQL
-     For new users to setup, they can import the data from the DataDump file
+   - Run database dump for MySQL-
+     For new users to setup, they can import the data from the 'DataDump.sql file'
 
 ### Setup .env and config.js files
 To change the configurations to suit your MySQL settings:
-in server/, create an .env file. put configurations in as you see fitting your local mysql server 
+in server/, create an .env file, put configurations in as you see fitting your local mysql server 
    - Set .env variables
-   - Setup .env and config.js files
+   - Setup .env file
+   
+```javascript
+NODE_ENV = development
+PORT = 3001
+
+# MySQL connection info, fill according to your local configurations
+
+HOST =  ...
+MYSQL_USER =  ...
+PASSWORD = ...
+DATABASE = ...
+```
+  - Setup config.js file
+
+```javascript
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.PORT;
+const MySQL_Configs = {
+    host: process.env.HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
+}
+console.log(port, MySQL_Configs);
+module.exports = {MySQL_Configs, port};
+```
+
 
 ## To Run
-To start the development server for nodejs, cd into server/ and npm start
+To start the development server for nodejs, cd into server/ and run the command 'npm start', 
+`../server/npm start`.
 Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
-To start the development server for react, cd into client/ and npm start
+To start the development server for react, cd into client/ and run the command 'npm start', 
+`../client/npm start`.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
