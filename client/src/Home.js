@@ -4,6 +4,8 @@ import './index.css';
 import './StickyNotesApp.css';
 import { Link } from 'react-router-dom';
 
+import LoginButton from './components/LoginButton';
+
 class Home extends React.Component {
     render() {
         return (
@@ -19,13 +21,7 @@ class Home extends React.Component {
                             </h2>
                         </div>
                         <div className="formButtons">
-                            <nav>
-                                <ul>
-                                    <button className="logInButton" ><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/login">Log In</Link></button>
-                                    <div><h5 style={{ color: "black" }}>New User ?</h5></div>
-                                    <button className="createNewButton" ><Link style={{ textDecoration: 'none', color: 'blue' }} to="/register">Create New Account</Link></button>
-                                </ul>
-                            </nav>
+                            <LoginButton/>
                         </div>
                     </header>
                 </div>
@@ -35,3 +31,14 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+/*
+<nav>
+                                <ul>
+                                    <button className="logInButton" ><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/login">Log In</Link></button>
+                                    <div><h5 style={{ color: "black" }}>New User ?</h5></div>
+                                    <button className="createNewButton" ><Link style={{ textDecoration: 'none', color: 'blue' }} to="/register">Create New Account</Link></button>
+                                </ul>
+                            </nav>
+
+                            */
