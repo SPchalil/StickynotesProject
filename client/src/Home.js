@@ -22,6 +22,7 @@ class Home extends React.Component {
                         </div>
                         <div className="formButtons">
                             <LoginButton/>
+                            <div><h5 style={{ color: "black" }}>New User ?</h5></div>
                         </div>
                     </header>
                 </div>
