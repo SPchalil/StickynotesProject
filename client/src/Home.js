@@ -28,7 +28,9 @@ class Home extends React.Component {
                             <LoginButton/>
                             <div><h5 style={{ color: "black" }}>New User ?</h5></div>
                             <SignUpButton/>
-                            <LogoutButton/>
+                            <Link to="/logout">
+                                <LogoutButton/>
+                            </Link>
                             <Profile/>
                         </div>
                     </header>
