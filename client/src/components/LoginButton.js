@@ -7,7 +7,7 @@ const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
 
     return (
-        <button className="logInButton" style={{ Color: 'blue' }} onClick={() => loginWithRedirect()}>
+        <button className="logInButton" onClick={() => loginWithRedirect()}>
             Log In
         </button>
 

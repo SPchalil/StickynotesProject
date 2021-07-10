@@ -5,6 +5,9 @@ import './StickyNotesApp.css';
 import { Link } from 'react-router-dom';
 
 import LoginButton from './components/LoginButton';
+import SignUpButton from './components/SignUpButton';
+import LogoutButton from './components/LogoutButton';
+import Profile from './components/Profile';
 
 class Home extends React.Component {
     render() {
@@ -20,9 +23,13 @@ class Home extends React.Component {
                                 <a className="link" href="https://github.com/SPchalil/React-StickyNotes"> github </a>
                             </h2>
                         </div>
+                        <br/>
                         <div className="formButtons">
                             <LoginButton/>
                             <div><h5 style={{ color: "black" }}>New User ?</h5></div>
+                            <SignUpButton/>
+                            <LogoutButton/>
+                            <Profile/>
                         </div>
                     </header>
                 </div>
@@ -33,13 +40,13 @@ class Home extends React.Component {
 
 export default Home;
 
-/*
+/*---Before adding Auth0 library----------
 <nav>
-                                <ul>
-                                    <button className="logInButton" ><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/login">Log In</Link></button>
-                                    <div><h5 style={{ color: "black" }}>New User ?</h5></div>
-                                    <button className="createNewButton" ><Link style={{ textDecoration: 'none', color: 'blue' }} to="/register">Create New Account</Link></button>
-                                </ul>
-                            </nav>
+    <ul>
+        <button className="logInButton" ><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/login">Log In</Link></button>
+        <div><h5 style={{ color: "black" }}>New User ?</h5></div>
+        <button className="createNewButton" ><Link style={{ textDecoration: 'none', color: 'blue' }} to="/register">Create New Account</Link></button>
+    </ul>
+</nav>
 
-                            */
+----------------------------------------*/
