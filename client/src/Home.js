@@ -28,9 +28,7 @@ class Home extends React.Component {
                             <LoginButton/>
                             <div><h5 style={{ color: "black" }}>New User ?</h5></div>
                             <SignUpButton/>
-                            <Link to="/logout">
-                                <LogoutButton/>
-                            </Link>
+                            <LogoutButton/>
                             <Profile/>
                         </div>
                     </header>
@@ -50,5 +48,7 @@ export default Home;
         <button className="createNewButton" ><Link style={{ textDecoration: 'none', color: 'blue' }} to="/register">Create New Account</Link></button>
     </ul>
 </nav>
-
+<Link to="/logout">
+                                <LogoutButton/>
+                            </Link>
 ----------------------------------------*/
