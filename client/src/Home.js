@@ -27,11 +27,11 @@ class Home extends React.Component {
                         <br/>
                         <div className="formButtons">
                             
-                            <Link to = "/stickynotesapp/:userId"><LoginButton/></Link>
+                            <LoginButton/> <LogoutButton/>
                             <div><h5 style={{ color: "black" }}>New User ?</h5></div>
                             <SignUpButton/>
-                            <LogoutButton/>
                             <Profile/>
+                            
                         </div>
                     </header>
                 </div>
@@ -43,6 +43,7 @@ class Home extends React.Component {
 export default Home;
 // <LoginButton/>
 //<AuthenticationButton/>
+//<Link to = "/stickynotesapp/:userId"><LoginButton/></Link>
 /*---Before adding Auth0 library----------
 <nav>
     <ul>

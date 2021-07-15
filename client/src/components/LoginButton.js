@@ -1,4 +1,4 @@
-/*
+
 
 import React from 'react';
 //import './Register.css';
@@ -18,8 +18,8 @@ const LoginButton = () => {
 
 export default LoginButton;
 
-*/
 
+/*
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -35,3 +35,4 @@ function LoginButton() {
 }
 
 export default LoginButton;
+*/

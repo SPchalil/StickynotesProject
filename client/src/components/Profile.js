@@ -5,19 +5,23 @@ import { useAuth0 } from "@auth0/auth0-react";
 import JSONPretty from 'react-json-pretty';
 
 const Profile = () => {
-  const { user } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(user);
-  const { name} = user;
-  
+  //const { name} = user;
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
   return (
+
+    isAuthenticated &&(
     <div>
         
-        <h2>{name}</h2>
-        <JSONPretty data={user}/>
+        <h1>{user.name}</h1>
+        
         
         
     </div>
-    
+  )
   );
   
 };
