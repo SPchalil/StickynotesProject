@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import LoginButton from './components/LoginButton';
 import SignUpButton from './components/SignUpButton';
 import LogoutButton from './components/LogoutButton';
+import AuthenticationButton from './components/authentication-button';
 import Profile from './components/Profile';
 
 class Home extends React.Component {
@@ -25,7 +26,8 @@ class Home extends React.Component {
                         </div>
                         <br/>
                         <div className="formButtons">
-                            <LoginButton/>
+                            
+                            <Link to = "/stickynotesapp/:userId"><LoginButton/></Link>
                             <div><h5 style={{ color: "black" }}>New User ?</h5></div>
                             <SignUpButton/>
                             <LogoutButton/>
@@ -39,7 +41,8 @@ class Home extends React.Component {
 }
 
 export default Home;
-
+// <LoginButton/>
+//<AuthenticationButton/>
 /*---Before adding Auth0 library----------
 <nav>
     <ul>
