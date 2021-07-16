@@ -5,6 +5,8 @@ import './StickyNotesApp.css';
 //import Home from "./Home";
 import { Link } from 'react-router-dom';
 
+import LoginButton from "./components/LoginButton";
+
 class Logout extends React.Component {
 
     render() {
@@ -22,7 +24,7 @@ class Logout extends React.Component {
                             <nav>
                                 
 
-                                <button className = "logInButton" ><Link style={{ textDecoration: 'none',  color: '#FFF' }} to="/login">Log In</Link></button>
+                                <LoginButton/>
                                 <button className = "homeButton" ><Link style={{ textDecoration: 'none',  color: '#FFF' }} to="/">Home</Link></button>
 
                                 
@@ -36,3 +38,5 @@ class Logout extends React.Component {
 }
 
 export default Logout;
+
+//<button className = "logInButton" ><Link style={{ textDecoration: 'none',  color: '#FFF' }} to="/login">Log In</Link></button>

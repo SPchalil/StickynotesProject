@@ -9,7 +9,7 @@ const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
 
     return (
-        <button className="logInButton" onClick={() => loginWithRedirect()}>
+        <button className="logInButton" onClick={() => loginWithRedirect({ returnTo: "http://localhost:3000/stickynotesapp/:userId" })}>
             Log In
         </button>
 

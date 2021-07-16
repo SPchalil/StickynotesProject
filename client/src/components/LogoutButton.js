@@ -25,6 +25,7 @@ export default LogoutButton;
 
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import '../StickyNotesApp.css';
 
 function LogoutButton() {
   const {
@@ -33,10 +34,17 @@ function LogoutButton() {
   } = useAuth0();
 
   return isAuthenticated && (
-    <button className="logInButton" onClick={() => {
-      logout({ returnTo: window.location.origin });
+    <button className="logOutButton" onClick={() => {
+      logout({ returnTo: "http://localhost:3000/logout" });
     }}>Log out</button>
   );
 }
 
 export default LogoutButton;
+
+//<Link to = "/stickynotesapp/:userId"><LoginButton/></Link>
+/*
+<button className="logInButton" onClick={() => {
+      logout({ returnTo: window.location.origin });
+    }}>Log out</button>
+    */

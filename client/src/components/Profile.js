@@ -16,7 +16,7 @@ const Profile = () => {
     isAuthenticated &&(
     <div>
         
-        <h1>{user.name}</h1>
+        <h1 className=".UserMessage">{user.name}</h1>
         
         
         

@@ -5,16 +5,29 @@ import { useHistory } from 'react-router-dom';
 import Board from './Board.jsx';
 import './StickyNotesApp.css';
 
+import LogoutButton from './components/LogoutButton';
+import Profile from './components/Profile';
+
 function StickyNotesApp() {
   let { userId } = useParams();
   const history = useHistory();
-  const handleClick = () => history.push('/logout');
+  //const handleClick = () => history.push('/logout');
   return (
     <div>
       <div className="UserMessage">
-        <div >Hello, {userId}</div>
-        <div className="regButtons">
-          <nav>
+        <div >Hello, {<Profile/>}</div>
+       
+        <LogoutButton/>
+    
+      </div>
+      <Board />
+    </div>
+  );
+}
+export default StickyNotesApp;
+
+/*
+<nav>
             <button
               className="logOutButton"
               type="button"
@@ -26,10 +39,4 @@ function StickyNotesApp() {
               </Link>
             </button>
           </nav>
-        </div>
-      </div>
-      <Board />
-    </div>
-  );
-}
-export default StickyNotesApp;
+*/
