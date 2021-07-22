@@ -6,7 +6,7 @@ import Board from './Board.jsx';
 import './StickyNotesApp.css';
 
 import LogoutButton from './components/LogoutButton';
-import Profile from './components/Profile';
+//import Profile from './components/Profile';
 
 function StickyNotesApp() {
   let { userId } = useParams();
@@ -15,7 +15,7 @@ function StickyNotesApp() {
   return (
     <div>
       <div className="UserMessage">
-        <div >Hello, {<Profile/>}</div>
+        
        
         <LogoutButton/>
     
@@ -25,7 +25,7 @@ function StickyNotesApp() {
   );
 }
 export default StickyNotesApp;
-
+//<div >Hello, {<Profile/>}</div>
 /*
 <nav>
             <button

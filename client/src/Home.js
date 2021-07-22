@@ -8,7 +8,7 @@ import LoginButton from './components/LoginButton';
 import SignUpButton from './components/SignUpButton';
 import LogoutButton from './components/LogoutButton';
 import AuthenticationButton from './components/authentication-button';
-import Profile from './components/Profile';
+//import Profile from './components/Profile';
 
 class Home extends React.Component {
     render() {

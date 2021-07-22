@@ -9,7 +9,7 @@ import Register from './Register';
 import Thanks from './Thanks';
 import Logout from './Logout';
 
-import { Profile} from "./components/Profile";
+import {Profile} from "./views";
 import ProtectedRoute from "./protected-route";
 
 import './index.css';
